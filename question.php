@@ -79,6 +79,10 @@ if(!array_key_exists("nom",$_SESSION)){
 }</style>
                                 </head>
                                 <body oncontextmenu='return false' class='snippet-body'>
+                                <form>
+                                    <br>
+
+</form>
                                 <?php $id = $_GET["id"]; 
                                 ?>
                                                                 <div class="container mt-5">
@@ -144,9 +148,8 @@ if(!array_key_exists("nom",$_SESSION)){
                     
                     try{
                         $result = $conn->new_comment($_POST['commentaire'],$_SESSION['id'], $id);
-                        $counter = 0;
-                        
-                       
+                        echo("<script>location.href = 'question.php?id=$id';</script>");
+
                         }
                         catch(PDOException $e) {
                              "<br>" . $e->getMessage();

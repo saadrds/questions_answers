@@ -105,7 +105,9 @@ h1{
 </style>
                                 </head>
                                 <body oncontextmenu='return false' class='snippet-body'>
-                                <h1>Ajouter un nouveau Poste : </h1>
+                                
+ <a href="main.php" ><button class="btn btn-shadow btn-wide btn-primary" style="margin: 0 0 0 -700px;" > </span> &laquo; Retour  </button></a>
+                                <h1 style="margin: -80px 0 0 0;">Ajouter un nouveau Poste : </h1>
 
                                 <div class="container text-center">
     <div class="card p-5">
@@ -121,7 +123,7 @@ h1{
                 <div class="row mt-3">
                     <div class="col-md-12"> <textarea class="form-control textarea" rows="4" name="question">  Question </textarea> </div>
                 </div>
-                <div class="send-button mt-4"> <button class="button" type="submit">Post my question </button> </div>
+                <div class="send-button mt-4"> <button class="btn btn-shadow btn-wide btn-primary" type="submit">Post my question </button> </div>
 </form>
             </div>
         </div>
