@@ -54,7 +54,7 @@ public function findUserById($fname){
 }
 
 public function findUserByMailandPassword($mail, $password){
-    $qry = 'select * from user where mail =' . $mail. 'and password = '.$password; // Your query
+    $qry = "select * from user where mail =  '$mail' and password = '$password'"; // Your query
     $result = $this->connection -> query($qry); // execute query
     return $result;
     
@@ -82,4 +82,20 @@ public function new_comment($description,$id_user){
   // use exec() because no results are returned
   $this->connection->exec($sql);
 }
+
+public function new_user($nom,$prenom,$mail,$password){
+  $date = date("Y-m_d");
+  $sql = "INSERT INTO user(nom, prenom, date_inscription, password, mail)
+VALUES ('$nom','$prenom','$date','$password','$mail')";
+// use exec() because no results are returned
+$this->connection->exec($sql);
+}
+
+
+}
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
 }

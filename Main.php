@@ -1,4 +1,11 @@
-<?php require_once('connexion.php'); ?>
+<?php 
+session_start();
+if(!array_key_exists("nom",$_SESSION)){
+    header('Location: login.php');
+
+}
+
+require_once('connexion.php'); ?>
 <html><head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>  <link rel="stylesheet" href="styles.css">
 <style>body {
     margin: -20 0 0 0;
@@ -24,7 +31,9 @@
     <div class="container-fluid mt-100">
     <div class="d-flex flex-wrap justify-content-between">
         <div> <a  href="post.php/" ><button type="button" class="btn btn-shadow btn-wide btn-primary"> <span class="btn-icon-wrapper pr-2 opacity-7"> <i class="fa fa-plus fa-w-20"></i> </span> New Post </button> </a> </div>
-        <div class="col-12 col-md-3 p-0 mb-3"> <button type="button" class="btn btn-shadow btn-wide btn-primary" style="margin: 0 0;" ><span class="btn-icon-wrapper pr-2 opacity-7"> <i class="fa fa-plus fa-w-20"></i> </span> Logout </button></div>
+        <form method ="post", action="logout.php">
+            <div class="col-12 col-md-3 p-0 mb-3"> <button type="submit" class="btn btn-shadow btn-wide btn-primary" style="margin: 0 0;" ><span class="btn-icon-wrapper pr-2 opacity-7"> <i class="fa fa-plus fa-w-20"></i> </span> Logout </button></div>
+        </from>
     </div>
     <div class="card mb-3">
         <div class="card-header pl-0 pr-0">

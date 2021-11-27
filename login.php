@@ -1,3 +1,10 @@
+<?php 
+session_start();
+if(array_key_exists("nom",$_SESSION)){
+    header('Location: main.php'); 
+}
+
+?>
 <!doctype html>
                         <html>
                             <head>
@@ -8,8 +15,10 @@
                                 <link href='' rel='stylesheet'>
                                 <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
                                 <style>body {
-                                    margin-top: -80px;
-                                    margin-left: 80px;
+                                    margin-top: -100px;
+                                    margin-left: 20px;
+                                    height: 100%;
+                                    width: 90%;
 
     color: #6a6f8c;
     background: #59C0FA;
@@ -18,9 +27,8 @@
 
 .login-box {
     width: 100%;
-    margin: auto;
     max-width: 525px;
-    min-height: 670px;
+    min-height: 570px;
     position: relative;
     background: url(https://images.unsplash.com/photo-1507208773393-40d9fc670acf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1268&q=80) no-repeat center;
     box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19)
@@ -214,7 +222,7 @@ a {
                                 <body oncontextmenu='return false' class='snippet-body'>
                                 <div class="row">
     <div class="col-md-6 mx-auto p-0">
-                                                        <img src="logo.png" style="height: 400px; width: 300px; margin-top: -150;margin-bottom: -130px; margin-left: 180px;">
+            <img src="logo.png" style="height: 400px; width: 300px; margin-top: -150;margin-bottom: -130px; margin-left: 180px;">
 
         <div class="card">
 
@@ -223,25 +231,29 @@ a {
                 <div class="login-snip"> <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label> <input id="tab-2" type="radio" name="tab" class="sign-up">
                     <label for="tab-2" class="tab">Sign Up</label>
                     <div class="login-space">
+                        <form action="login_check.php" method="post" id="login_form" name="login_form">
                         <div class="login">
                             <br>
                             <br>
                             <br>
-                            <div class="group"> <label for="user" class="label">Username</label> <input id="user" type="text" class="input" placeholder="Enter your username"> </div>
-                            <div class="group"> <label for="pass" class="label">Password</label> <input id="pass" type="password" class="input" data-type="password" placeholder="Enter your password"> </div>
+                            <div class="group"> <label for="user" class="label">Username</label> <input id="user" name="user" type="text" class="input" placeholder="Enter your username"> </div>
+                            <div class="group"> <label for="pass" class="label">Password</label> <input id="pass" name="password" type="password" class="input" data-type="password" placeholder="Enter your password"> </div>
                             <div class="group"> <input type="submit" class="button" value="Sign In"> </div>
                             <div class="hr"></div>
                         </div>
+                        </form>
+                        <form action="signup_check.php" method="post" id="signup_form" name="signup_form">
                         <div class="sign-up-form">
-                            <br><br>
-                            <div class="group"> <label for="user" class="label">Username</label> <input id="user" type="text" class="input" placeholder="Create your Username"> </div>
-                            <div class="group"> <label for="pass" class="label">Password</label> <input id="pass" type="password" class="input" data-type="password" placeholder="Create your password"> </div>
+                            <div class="group"> <label for="nom" class="label">nom</label> <input id="nom" type="text" class="input" placeholder="nom" name="nom"> </div>
+                            <div class="group"> <label for="prenom" class="label">prenom</label> <input id="prenom" type="text" class="input" placeholder="prenom" name="prenom"> </div>
+                            <div class="group"> <label for="pass" class="label">Password</label> <input id="pass" type="password" class="input" data-type="password" placeholder="Create your password" name="password"> </div>
                             
-                            <div class="group"> <label for="pass" class="label">Email Address</label> <input id="pass" type="text" class="input" placeholder="Enter your email address"> </div>
-                            <div class="group"> <input type="submit" class="button" value="Sign Up"> </div>
+                            <div class="group"> <label for="pass" class="label">Email Address</label> <input id="pass" type="text" class="input" placeholder="Enter your email address" name="mail"> </div>
+                            <div class="group"> <input type="submit" class="button" value="Sign Up"></div>
                             <div class="hr"></div>
                             <div class="foot"> <label for="tab-1">Already Member?</label> </div>
                         </div>
+                    </form>
                     </div>
                 </div>
             </div>
