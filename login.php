@@ -2,9 +2,9 @@
 session_start();
 if(array_key_exists("nom",$_SESSION)){
     header('Location: main.php'); 
-}
+}?>
 
-?>
+
 <!doctype html>
                         <html>
                             <head>
@@ -225,11 +225,17 @@ a {
             <img src="logo.png" style="height: 400px; width: 300px; margin-top: -150;margin-bottom: -130px; margin-left: 180px;">
 
         <div class="card">
-
+        <strong style="color:red">
+            <?php
+if(array_key_exists("var",$_GET)){
+    echo "email ou mot de passe incorrect";
+}?>
+</strong>
             <div class="login-box">
 
                 <div class="login-snip"> <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label> <input id="tab-2" type="radio" name="tab" class="sign-up">
-                    <label for="tab-2" class="tab">Sign Up</label>
+                    
+                <label for="tab-2" class="tab">Sign Up</label>
                     <div class="login-space">
                         <form action="login_check.php" method="post" id="login_form" name="login_form">
                         <div class="login">

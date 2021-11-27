@@ -19,6 +19,9 @@ require_once('connexion.php');
             $_SESSION["id"] = $result_user['id'];
             header('Location: main.php'); 
         }
+        else{
+            header('Location: login.php?var=err'); 
+        }
         
       }
     
