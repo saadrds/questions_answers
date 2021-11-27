@@ -70,8 +70,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     color: #fff;
 }</style>
 <body>
+<a href="main.php" ><button class="btn btn-shadow btn-wide btn-primary" style="margin: -15px 0 0 -25px;" > </span> &laquo; Retour  </button></a>
+<br>
     <div class="all">
-<div class="container register-form">
+    <div class="container register-form">
+    <br>
+
     <h1>EZ DEV</h1>
             <div class="form">
                 <div class="note">
@@ -90,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <span>password</span><input type="text" class="form-control" placeholder="password" name="password" value="<?php echo $_SESSION['password'];?>"/>
+                                <span>password</span><input type="password" class="form-control" placeholder="password" name="password" value="<?php echo $_SESSION['password'];?>"/>
                             </div>
                             <div class="form-group">
                             <span>email</span><input type="text" class="form-control" placeholder="mail" name="mail" value="<?php echo $_SESSION['mail'];?>"/>

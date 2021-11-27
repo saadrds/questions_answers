@@ -72,7 +72,7 @@ body {
     height: 40px;
     width: 150px;
     border: none;
-    background-color: #000;
+    background-color: #150347;
     color: #aeaeae;
     font-size: 15px
 }
@@ -105,14 +105,15 @@ hr .new1 {
 </head>
 
 <body>
-    
+    <br>
+    <br>
+    <div class=" d-flex mt-2"> <a href="main.php"><button class="btn1 btn-primary" style="margin: 0 0 0 10px;">My Feed</button> </div></a>
+
 <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
     <div class="card p-4">
-        <div class=" image d-flex flex-column justify-content-center align-items-center"> <button class="btn btn-secondary"> <img src="https://i.imgur.com/wvxPV9S.png" height="100" width="100" /></button> <span class="name mt-3"><?php echo $_SESSION['nom']." ". $_SESSION['prenom']; ?></span> <span class="idd">@<?php echo $_SESSION['nom']; ?></span>
-            <div class="d-flex flex-row justify-content-center align-items-center gap-2"> <span class="idd1">Oxc4c16a645_b21a</span> <span><i class="fa fa-copy"></i></span> </div>
-            <div class="d-flex flex-row justify-content-center align-items-center mt-3"> <span class="number">1069 <span class="follow">votes</span></span> </div>
+        <div class=" image d-flex flex-column justify-content-center align-items-center"> <button class="btn btn-secondary"> <img src="user.png" height="100" width="100" /></button> <span class="name mt-3"><?php echo $_SESSION['nom']." ". $_SESSION['prenom']; ?></span> <span class="idd">@<?php echo $_SESSION['nom']; ?></span>
             <div class=" d-flex mt-2"> <a href="edit_profile.php"><button class="btn1 btn-dark">Edit Profile</button> </div></a>
-            <div class="text mt-3"> <span>mail : <?php echo $_SESSION['mail']; ?><br><br></span> </div>
+            <div class="text mt-3"> <span> Mail : <?php echo $_SESSION['mail']; ?><br><br></span> </div>
             <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center"> <span><i class="fa fa-twitter"></i></span> <span><i class="fa fa-facebook-f"></i></span> <span><i class="fa fa-instagram"></i></span> <span><i class="fa fa-linkedin"></i></span> </div>
             <div class=" px-2 rounded mt-4 date "> <span class="join">Joined <?php echo $_SESSION['date_inscription'];?></span> </div>
         </div>
