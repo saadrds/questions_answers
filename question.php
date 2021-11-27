@@ -100,24 +100,61 @@ if(!array_key_exists("nom",$_SESSION)){
                                     $result = $conn->findUserById($value['id_user'])->fetchAll();
                                     $nameUser = $result[0]['nom'] . ' '. $result[0]['prenom'];
                                 ?>
-                    <div class="user d-flex flex-row align-items-center">  <span><small class="font-weight-bold text-primary"><?php echo $nameUser; ?></small> <br> <small class="font-weight-bold"><?php echo $value[1]; ?></small></span> </div> <small><?php echo $value['date']; ?></small>
+                    <div class="user d-flex flex-row align-items-center">  <span><small class="font-weight-bold text-primary"><?php echo $nameUser; ?> : </small> <br> <small class="font-weight-bold"><?php echo $value[1]; ?></small></span> </div> <small><?php echo $value['date']; ?></small>
                 </div>
                 <div class="action d-flex justify-content-between mt-2 align-items-center">
                 </div>
             </div>
             <?php }?>
+
             <br><br>
-            <h5>Comments</h5>
+            <h5>Commentaires : </h5>
+<?php $conn = new myConnection();
+            $conn->connect();
+            $comments = $conn->findCommentsByPost($id)->fetchAll();
+            
+            foreach ($comments as $value) {
+               ?>
 
             <div class="card p-3 mt-2">
                 <div class="d-flex justify-content-between align-items-center">
-                    <div class="user d-flex flex-row align-items-center"> <span><small class="font-weight-bold text-primary">olan_sams</small> <small class="font-weight-bold">Loving your work and profile! </small></span> </div> <small>3 days ago</small>
+                <?php
+                                    $result = $conn->findUserById($value['id_user'])->fetchAll();
+                                    $nameUser = $result[0]['nom'] . ' '. $result[0]['prenom'];
+                                ?>
+                    <div class="user d-flex flex-row align-items-center"> <span><small class="font-weight-bold text-primary"><?php echo $nameUser; ?> : </small><br> <small class="font-weight-bold"><?php echo $value['description']; ?></small></span> </div> <small><?php echo $value['date']; ?></small>
                 </div>
                 <div class="action d-flex justify-content-between mt-2 align-items-center">
                 </div>
             </div>
-            
+
+            <?php }?>
+<br> 
+<br>
+            <form method ="post", action="question.php?id=<?php echo $id?>">
+     <h5>Ajouter un commentaire : </h5>
+     
+    <textarea class="form-control" name="commentaire" id="exampleFormControlTextarea1" rows="3"></textarea><br>
+            <div class="col-12 col-md-3 p-0 mb-3"> <button type="submit" class="btn btn-shadow btn-wide btn-primary" style="margin: 0 0;" ><span class="btn-icon-wrapper pr-2 opacity-7"> <i class="fa fa-plus fa-w-20"></i> </span> Publier  </button></div>
+            <?php
+            if(isset($_POST['commentaire']))
+            {
+                if($_POST['commentaire']!="") 
+                {
+                    try{
+                        $result = $conn->new_comment($_POST['commentaire'],$_SESSION['id'], $id);
+                        }
+                        catch(PDOException $e) {
+                             "<br>" . $e->getMessage();
+                          }
+
+                }
+            }
+                                    
+                                ?>
+        </from>
         </div>
+        
     </div>
 </div>
                                 <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js'></script>

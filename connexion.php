@@ -75,7 +75,7 @@ public function new_post($titre,$categorie,$contenu,$id_user){
   $this->connection->exec($sql);
 }
 
-public function new_comment($description,$id_user){
+public function new_comment($description,$id_user,$id_post){
     $date = date("Y-m_d");
     $sql = "INSERT INTO post (titre, date,categorie, contenu,id_user)
   VALUES ($date,$description,$id_post,$id_user)";

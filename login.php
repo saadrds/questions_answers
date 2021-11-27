@@ -21,7 +21,7 @@ if(array_key_exists("nom",$_SESSION)){
                                     width: 90%;
 
     color: #6a6f8c;
-    background: #59C0FA;
+    background: #0b588b;
     font: 600 16px/18px 'Open Sans', sans-serif
 }
 
