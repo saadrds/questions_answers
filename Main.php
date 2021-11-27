@@ -27,6 +27,7 @@ require_once('connexion.php'); ?>
 </head>
 
 <body>
+    <a href="myprofile.php"><img src="profile.png" /></a>
     <img src="logo.png" id="logo" />
     <div class="container-fluid mt-100">
     <div class="d-flex flex-wrap justify-content-between">
