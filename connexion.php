@@ -81,6 +81,12 @@ public function new_comment($description,$id_user,$id_post){
   VALUES ('$date','$description','$id_post','$id_user')";
   // use exec() because no results are returned
   $this->connection->exec($sql);
+  $this->connection = null;
+  $counter=0;
+  while($counter < 200){
+    $counter++;
+
+  }
 }
 
 public function new_user($nom,$prenom,$mail,$password){
