@@ -75,6 +75,13 @@ public function new_post($titre,$categorie,$contenu,$id_user){
   $this->connection->exec($sql);
 }
 
+public function update_user($id,$nom,$prenom,$mail,$password){
+  $sql = "UPDATE user SET nom='$nom' , prenom='$prenom' ,password='$password' , mail='$mail' WHERE id='$id'";
+// use exec() because no results are returned
+$this->connection->exec($sql);
+}
+
+
 public function new_comment($description,$id_user,$id_post){
     $date = date("Y-m_d");
     $sql = "INSERT INTO commentaire (date, description, id_post,id_user)
