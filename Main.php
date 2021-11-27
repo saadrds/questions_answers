@@ -27,8 +27,8 @@ require_once('connexion.php'); ?>
 </head>
 
 <body>
-    <a href="myprofile.php"><img src="profile.png" /></a>
-    <img src="logo.png" id="logo" />
+    <a href="myprofile.php"><img src="profile.png"  height="60px" width="60px" style="margin-left:30px;margin-right:300px;"/></a>
+    <img src="logo.png" />
     <div class="container-fluid mt-100">
     <div class="d-flex flex-wrap justify-content-between">
         <div> <a  href="post.php/" ><button type="button" class="btn btn-shadow btn-wide btn-primary"> <span class="btn-icon-wrapper pr-2 opacity-7"> <i class="fa fa-plus fa-w-20"></i> </span> New Post </button> </a> </div>
