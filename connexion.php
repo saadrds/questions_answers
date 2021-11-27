@@ -70,7 +70,7 @@ public function findCommentsByPost($post){
 public function new_post($titre,$categorie,$contenu,$id_user){
     $date = date("Y-m_d");
     $sql = "INSERT INTO post (titre, date,categorie, contenu,id_user)
-  VALUES ('$titre',$date,$categorie,$contenu,$id_user)";
+  VALUES ('$titre','$date','$categorie','$contenu','$id_user')";
   // use exec() because no results are returned
   $this->connection->exec($sql);
 }
