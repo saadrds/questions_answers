@@ -111,7 +111,7 @@ VALUES ('$nom','$prenom','$date','$password','$mail')";
 $this->connection->exec($sql);
 }
 public function deletePost($id){
-  $qry = 'delete from post where id_post =' . $id; // Your query
+  $qry = 'delete from post where id =' . $id; // Your query
   $result = $this->connection -> query($qry); // execute query
   return $result;
   

@@ -75,7 +75,7 @@ require_once('connexion.php'); ?>
                         <div class="media col-8 align-items-center">
                             <div class="media-body flex-truncate ml-2">
                                 
-                             <a href="deletepost.php?id=<?php echo $value['id']?>" class="text-muted small text-truncate" data-abc="true"> <button class="btn btn-danger"> Delete </button> </a>
+                            <a href="deletepost.php?id=<?php echo $value['id']?>" class="btn btn-danger" data-abc="true"> Delete </a>
                             </div>
                         </div>
                     </div>
