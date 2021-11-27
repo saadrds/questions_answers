@@ -44,6 +44,13 @@ public function findPostById($id){
     
 
 }
+public function findPostByUser($id){
+  $qry = 'select * from post where id_user = '.$id ; // Your query
+  $result = $this->connection -> query($qry); // execute query
+  return $result;
+  
+
+}
 
 
 public function findUserById($fname){
@@ -90,6 +97,13 @@ VALUES ('$nom','$prenom','$date','$password','$mail')";
 // use exec() because no results are returned
 $this->connection->exec($sql);
 }
+public function deletePost($id){
+  $qry = 'delete from post where id_post =' . $id; // Your query
+  $result = $this->connection -> query($qry); // execute query
+  return $result;
+  
+}
+
 
 
 }

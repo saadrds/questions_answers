@@ -145,7 +145,6 @@ if(!array_key_exists("nom",$_SESSION)){
             {
                 if($_POST['commentaire']!="") 
                 {
-                    echo "comment : " . $_POST['commentaire'];
                     try{
                         $result = $conn->new_comment($_POST['commentaire'],$_SESSION['id'], $id);
                         echo("<script>location.href = 'question.php?id=$id';</script>");
