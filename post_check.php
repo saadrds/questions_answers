@@ -15,7 +15,7 @@ require_once('connexion.php');
                 }
                 
         catch(PDOException $e) {
-            echo $sql . "<br>" . $e->getMessage();
+            echo  "<br>" . $e->getMessage();
           }
         
       }
