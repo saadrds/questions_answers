@@ -8,13 +8,14 @@ $id = $_GET["id"];
         $conn->connect();
         try{
         $result = $conn->deletePost($id);
-        }
         header('Location: myposts.php');
+        }
+        
        
         catch(PDOException $e) {
-            echo $sql . "<br>" . $e->getMessage();
+            echo "<br>" . $e->getMessage();
           }
         
-      }
+      
     
 ?>
