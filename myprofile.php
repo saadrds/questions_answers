@@ -72,9 +72,10 @@ body {
     height: 40px;
     width: 150px;
     border: none;
-    background-color: #150347;
+    background-color: #0d6efd;
     color: #aeaeae;
-    font-size: 15px
+    font-size: 15px;
+    border-radius: 8px;
 }
 
 .text span {
@@ -100,15 +101,21 @@ hr .new1 {
 .date {
     background-color: #ccc
 }
+.logo{
+    margin: -40px;
+    width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 </style>
 
 </head>
 
 <body>
-    <br>
-    <br>
-    <div class=" d-flex mt-2"> <a href="main.php"><button class="btn1 btn-primary" style="margin: 0 0 0 10px;">My Feed</button> </div></a>
+<a href="main.php" ><button class="btn1 btn-shadow btn-wide btn-primary" style="margin: 10 0 0 10px;" > </span> &laquo; Retour  </button></a>
 
+    <img src="logo.png" height="200px" class="logo">
 <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
     <div class="card p-4">
         <div class=" image d-flex flex-column justify-content-center align-items-center"> <button class="btn btn-secondary"> <img src="user.png" height="100" width="100" /></button> <span class="name mt-3"><?php echo $_SESSION['nom']." ". $_SESSION['prenom']; ?></span> <span class="idd">@<?php echo $_SESSION['nom']; ?></span>

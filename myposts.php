@@ -8,7 +8,7 @@ if(!array_key_exists("nom",$_SESSION)){
 require_once('connexion.php'); ?>
 <html><head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>  <link rel="stylesheet" href="styles.css">
 <style>body {
-    margin: -180px 0 0 0;
+    margin: 0 0 0 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: .88rem;
     font-weight: 400;
@@ -17,18 +17,21 @@ require_once('connexion.php'); ?>
     text-align: left;
     background-color: #0b588b
 }
-#logo{
-    width: 300px;
-    height: 300px;
-    margin: -70 0 0 530;
+.logo{
+    margin: -40px;
+
+    width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>
 
 </head>
 
 <body>
-    <a href="myprofile.php"><img src="user.png"  height="60px" width="60px" style="margin-left:30px;margin-right:300px;"/></a>
-    <img src="logo.png" />
+<a href="myprofile.php"><img src="user.png"  height="60px" width="60px" style="margin-left:30px;margin-right:300px; margin-top:30px;"/></a>
+    <img src="logo.png" height="200px" class="logo">
     <div class="container-fluid mt-100">
     <div class="d-flex flex-wrap justify-content-between">
         <div> <a  href="post.php" ><button type="button" class="btn btn-shadow btn-wide btn-primary"> <span class="btn-icon-wrapper pr-2 opacity-7"> <i class="fa fa-plus fa-w-20"></i> </span> New Post </button> </a> 
