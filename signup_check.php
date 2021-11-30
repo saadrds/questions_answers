@@ -11,9 +11,7 @@ require_once('connexion.php');
         try{
         $result = $conn->new_user($nom,$prenom,$mail,$password);
         echo "vous etes bien inscrit dans notre site , retour vers la page de login pour se connecter : ";
-        }?>
-        <a href="login.php">page login</a>
-        <?php
+        }
         catch(PDOException $e) {
             echo $sql . "<br>" . $e->getMessage();
           }
@@ -21,3 +19,4 @@ require_once('connexion.php');
       }
     
 ?>
+        <a href="login.php">page login</a>
